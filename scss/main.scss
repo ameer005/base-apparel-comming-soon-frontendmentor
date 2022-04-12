@@ -17,6 +17,37 @@ $color-gradient-red-2: hsl(0, 74%, 74%);
 $color-white: #fff;
 $color-black: #000;
 
+// media query manager
+@mixin respond($breakpoint) {
+  // 1250px
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 79em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-pot {
+    // 900px
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    // 755px
+    @media only screen and (max-width: 47em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone-small {
+    // 755px
+    @media only screen and (max-width: 34em) {
+      @content;
+    }
+  }
+}
+
 *,
 *::after,
 *::before {
@@ -28,6 +59,14 @@ $color-black: #000;
 
 html {
   font-size: 62.5%;
+
+  @include respond(tab-pot) {
+    font-size: 56.25%;
+  }
+
+  @include respond(phone) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -40,13 +79,24 @@ body {
 
 .wrapper {
   min-height: 100vh;
-
   max-width: 100%;
 }
 
 .section-hero {
   display: grid;
   grid-template-columns: 60% auto;
+
+  @include respond(tab-pot) {
+    grid-template-columns: 50% auto;
+  }
+
+  @include respond(phone) {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
   // min-height: 100%;
 }
 
@@ -56,19 +106,73 @@ body {
   background-repeat: no-repeat;
 
   padding: 6.4rem 0rem 12rem 17rem;
+
+  @include respond(tab-land) {
+    padding: 6.4rem 0rem 12rem 8rem;
+  }
+
+  @include respond(phone) {
+    padding: 8rem 3.2rem;
+  }
 }
 
 .logo-box {
   margin-bottom: 12rem;
+
+  &--1 {
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &--2 {
+    display: none;
+
+    @include respond(phone) {
+      display: block;
+
+      margin-bottom: 0;
+      padding: 4.8rem 4.8rem;
+    }
+
+    @include respond(phone-small) {
+      padding: 3.2rem 4.8rem;
+    }
+  }
 }
 
 .hero__logo {
   width: 14rem;
+
+  @include respond(phone) {
+    width: 14rem;
+  }
+
+  @include respond(phone-small) {
+    width: 12rem;
+  }
 }
 
 .text-box {
   margin-bottom: 2.4rem;
   width: 69%;
+
+  @include respond(tab-land) {
+    width: 85%;
+  }
+
+  @include respond(phone) {
+    text-align: center;
+    width: 100%;
+  }
+
+  @include respond(phone) {
+    margin-bottom: 3.2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .heading-primary {
@@ -77,6 +181,10 @@ body {
   letter-spacing: 1.2rem;
   line-height: 1.1;
   margin-bottom: 1.8rem;
+
+  @include respond(tab-pot) {
+    font-size: 4.8rem;
+  }
 
   &-top {
     display: block;
@@ -94,18 +202,56 @@ body {
   line-height: 1.7;
   color: $color-primary-d-red;
   font-size: 400;
+
+  @include respond(phone) {
+    font-size: 1.7rem;
+  }
+
+  @include respond(phone) {
+    width: 65%;
+  }
+
+  @include respond(phone-small) {
+    width: 100%;
+  }
 }
 
 .form {
   .form-group {
     width: 69%;
     position: relative;
+
+    @include respond(tab-pot) {
+      width: 90%;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
+
+    @include respond(phone) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   .field-group {
     display: flex;
     text-align: center;
     margin-bottom: 0.8rem;
+
+    @include respond(phone) {
+      width: 60%;
+    }
+
+    @include respond(phone-small) {
+      width: 100%;
+    }
   }
 
   &__input {
@@ -122,6 +268,10 @@ body {
       color: rgba($color-primary-d-red, 0.6);
     }
 
+    @include respond(tab-land) {
+      width: 100%;
+    }
+
     // &:active {
     //   outline: none;
     //   border: 2px solid rgba($color-primary-d-red, 0.5);
@@ -131,7 +281,7 @@ body {
   .icon-error {
     position: absolute;
     top: 1.2rem;
-    right: 16rem;
+    right: 14rem;
     width: 2.4rem;
     transition: all 0.2s;
 
@@ -186,8 +336,22 @@ body {
   background-image: url(../images/hero-desktop.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+
+  @include respond(phone) {
+    background-image: none;
+    background-size: contain;
+    grid-row: 1;
+
+    order: -1;
+  }
 }
 
-// .hero-img {
-//   width: 100%;
-// }
+.hero-img {
+  width: 100%;
+
+  display: none;
+
+  @include respond(phone) {
+    display: block;
+  }
+}
