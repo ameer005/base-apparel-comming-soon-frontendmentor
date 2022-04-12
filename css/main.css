@@ -1,0 +1,161 @@
+/* SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 1;
+  font-family: "Josefin Sans", sans-serif;
+  color: #000;
+}
+
+.wrapper {
+  height: 100vh;
+  max-width: 100%;
+}
+
+.section-hero {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60% auto;
+      grid-template-columns: 60% auto;
+  height: 100%;
+}
+
+.hero-text-box {
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 6.4rem 0rem 0rem 17rem;
+}
+
+.logo-box {
+  margin-bottom: 12rem;
+}
+
+.hero__logo {
+  width: 14rem;
+}
+
+.text-box {
+  margin-bottom: 2.4rem;
+  width: 69%;
+}
+
+.heading-primary {
+  font-size: 5.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2rem;
+  line-height: 1.1;
+  margin-bottom: 1.8rem;
+}
+
+.heading-primary-top {
+  display: block;
+  font-weight: 300;
+  color: #ce9797;
+}
+
+.heading-primary-bottom {
+  font-weight: 600;
+}
+
+.hero__text {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #ce9797;
+  font-size: 400;
+}
+
+.form .form-group {
+  width: 69%;
+  position: relative;
+}
+
+.form .field-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.form__input {
+  width: 80%;
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 1.4rem 2.8rem;
+  border-radius: 3rem;
+  border: 2px solid rgba(206, 151, 151, 0.5);
+  outline: none;
+}
+
+.form__input::-webkit-input-placeholder {
+  color: rgba(206, 151, 151, 0.6);
+}
+
+.form__input:-ms-input-placeholder {
+  color: rgba(206, 151, 151, 0.6);
+}
+
+.form__input::-ms-input-placeholder {
+  color: rgba(206, 151, 151, 0.6);
+}
+
+.form__input::placeholder {
+  color: rgba(206, 151, 151, 0.6);
+}
+
+.form .icon-error {
+  position: absolute;
+  top: 1.2rem;
+  right: 16rem;
+  width: 2.4rem;
+}
+
+.form .error-text {
+  display: block;
+  font-size: 1.2rem;
+  margin-left: 2.8rem;
+  font-weight: 600;
+  color: #f96262;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: none;
+  background-color: #ee8c8c;
+  padding: 1.4rem 3.6rem;
+  border-radius: 2.5rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-box-shadow: 0 1.5rem 2.5rem rgba(238, 140, 140, 0.3);
+          box-shadow: 0 1.5rem 2.5rem rgba(238, 140, 140, 0.3);
+}
+
+.btn .icon-arrow {
+  display: block;
+  width: 1.2rem;
+}
+
+.hero-img-box {
+  background-image: url(../images/hero-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}

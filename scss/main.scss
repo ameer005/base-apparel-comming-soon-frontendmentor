@@ -1,0 +1,174 @@
+/* SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 */
+
+// SCSS var
+$color-primary-d-red: hsl(0, 36%, 70%);
+$color-primaru-s-red: hsl(0, 93%, 68%);
+
+$color-gradient-white-1: hsl(0, 0%, 100%);
+$color-gradient-white-2: hsl(0, 100%, 98%);
+
+$color-gradient-red-1: hsl(0, 80%, 86%);
+$color-gradient-red-2: hsl(0, 74%, 74%);
+
+$color-white: #fff;
+$color-black: #000;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  line-height: 1;
+  font-family: "Josefin Sans", sans-serif;
+
+  color: $color-black;
+}
+
+.wrapper {
+  height: 100vh;
+
+  max-width: 100%;
+}
+
+.section-hero {
+  display: grid;
+  grid-template-columns: 60% auto;
+  height: 100%;
+}
+
+.hero-text-box {
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  padding: 6.4rem 0rem 0rem 17rem;
+}
+
+.logo-box {
+  margin-bottom: 12rem;
+}
+
+.hero__logo {
+  width: 14rem;
+}
+
+.text-box {
+  margin-bottom: 2.4rem;
+  width: 69%;
+}
+
+.heading-primary {
+  font-size: 5.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2rem;
+  line-height: 1.1;
+  margin-bottom: 1.8rem;
+
+  &-top {
+    display: block;
+    font-weight: 300;
+    color: $color-primary-d-red;
+  }
+
+  &-bottom {
+    font-weight: 600;
+  }
+}
+
+.hero__text {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: $color-primary-d-red;
+  font-size: 400;
+}
+
+.form {
+  .form-group {
+    width: 69%;
+    position: relative;
+  }
+
+  .field-group {
+    display: flex;
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+
+  &__input {
+    width: 80%;
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 1.4rem 2.8rem;
+    border-radius: 3rem;
+
+    border: 2px solid rgba($color-primary-d-red, 0.5);
+    outline: none;
+
+    &::placeholder {
+      color: rgba($color-primary-d-red, 0.6);
+    }
+
+    // &:active {
+    //   outline: none;
+    //   border: 2px solid rgba($color-primary-d-red, 0.5);
+    // }
+  }
+
+  .icon-error {
+    position: absolute;
+    top: 1.2rem;
+    right: 16rem;
+    width: 2.4rem;
+
+    // transform: translate(30rem, 1.4rem);
+  }
+
+  .error-text {
+    display: block;
+    font-size: 1.2rem;
+    margin-left: 2.8rem;
+    font-weight: 600;
+    color: $color-primaru-s-red;
+  }
+}
+
+.btn {
+  display: inline-block;
+
+  border: none;
+  background: none;
+  background-color: $color-gradient-red-2;
+  padding: 1.4rem 3.6rem;
+  border-radius: 2.5rem;
+  transform: translateX(-50%);
+  box-shadow: 0 1.5rem 2.5rem rgba($color-gradient-red-2, 0.3);
+
+  .icon-arrow {
+    display: block;
+    width: 1.2rem;
+  }
+}
+
+.hero-img-box {
+  background-image: url(../images/hero-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// .hero-img {
+//   width: 100%;
+// }
