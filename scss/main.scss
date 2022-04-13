@@ -46,6 +46,13 @@ $color-black: #000;
       @content;
     }
   }
+
+  @if $breakpoint == big-desktop {
+    // 1800px
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
 }
 
 *,
@@ -66,6 +73,10 @@ html {
 
   @include respond(phone) {
     font-size: 50%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 70%;
   }
 }
 
@@ -101,7 +112,12 @@ body {
 }
 
 .hero-text-box {
-  background-image: url(../images/bg-pattern-desktop.svg);
+  background-image: linear-gradient(
+      180deg,
+      rgba($color-gradient-red-1, 0.07),
+      rgba($color-gradient-red-2, 0.07)
+    ),
+    url(../images/bg-pattern-desktop.svg);
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -164,14 +180,14 @@ body {
   @include respond(phone) {
     text-align: center;
     width: 100%;
-  }
-
-  @include respond(phone) {
-    margin-bottom: 3.2rem;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 3.2rem;
+  }
+
+  @include respond(phone-small) {
   }
 }
 
@@ -281,11 +297,19 @@ body {
   .icon-error {
     position: absolute;
     top: 1.2rem;
-    right: 14rem;
+    right: 15rem;
     width: 2.4rem;
     transition: all 0.2s;
 
     opacity: 0;
+
+    @include respond(phone) {
+      right: 30.5rem;
+    }
+
+    @include respond(phone-small) {
+      right: 14rem;
+    }
 
     // transform: translate(30rem, 1.4rem);
   }
@@ -299,6 +323,14 @@ body {
     transition: all 0.2s;
 
     opacity: 0;
+
+    @include respond(phone) {
+      transform: translateX(-16rem);
+    }
+
+    @include respond(phone-small) {
+      transform: translateX(-11rem);
+    }
   }
 }
 
